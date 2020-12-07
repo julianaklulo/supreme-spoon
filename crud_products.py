@@ -47,6 +47,22 @@ def create_product():
     print("\nProduct created successfully!\n")
 
     menu()
+
+def list_products():
+    print("\nProducts created:\n")
+    
+    if len(products) == 0:
+        print("No products yet!\n")
+        
+    else:
+        for product in products:
+            print(f"ID: {product.get_id()}")
+            print(f"Name: {product.get_name()}")
+            print(f"Description: {product.get_description()}")
+            print(f"Price: R${product.get_price()}\n")
+
+    menu()
+
 def menu():
     option = -1
     while option < 0 or option > 4:
@@ -62,5 +78,8 @@ def menu():
             break
         elif option == 1:
             create_product()
+        elif option == 2:
+            list_products()
+
 if __name__ == "__main__":
     menu()
