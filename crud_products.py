@@ -51,6 +51,15 @@ def create_product():
 
     menu()
 
+def find_product(id: int) -> int:
+    index = -1
+    for product in products:
+        if product.get_id() == id:
+            index = products.index(product)
+            break
+    
+    return index
+
 def list_products():
     if len(products) == 0:
         print("\nNo products yet!\n")
