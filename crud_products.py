@@ -73,22 +73,25 @@ def update_product():
         if product.get_id() == id:
             index = products.index(product)
             break
+    if index != -1:
+        print("\nProduct found!\n")
+        print(f"ID: {products[index].get_id()}")
+        print(f"Name: {products[index].get_name()}")
+        print(f"Description: {products[index].get_description()}")
+        print(f"Price: R${products[index].get_price()}\n")
 
-    print("\nProduct found!\n")
-    print(f"ID: {products[index].get_id()}")
-    print(f"Name: {products[index].get_name()}")
-    print(f"Description: {products[index].get_description()}")
-    print(f"Price: R${products[index].get_price()}\n")
+        name = input("New product name: ")
+        description = input("New product description: ")
+        price = float(input("New product price: "))
 
-    name = input("New product name: ")
-    description = input("New product description: ")
-    price = float(input("New product price: "))
+        products[index].set_name(name)
+        products[index].set_description(description)
+        products[index].set_price(price)
 
-    products[index].set_name(name)
-    products[index].set_description(description)
-    products[index].set_price(price)
+        print("\nProduct updated succesfully!\n")
 
-    print("\nProduct updated succesfully!\n")
+    else:
+        print("\nProduct not found!\n")
 
     menu()
 
