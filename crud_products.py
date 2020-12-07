@@ -79,6 +79,20 @@ def list_products():
 
     menu()
 
+def list_product_by_id():
+    print("\nList product by ID\n")
+    id = int(input("Product ID: "))
+
+    index = find_product(id)
+
+    if index >= 0:
+        print("\nProduct found!\n")
+        print_product(index)
+    else:
+        print("\nProduct not found!\n")
+    
+    menu()
+
 def update_product():
     print("\nUpdate a product\n")
     id = int(input("Product ID: "))
