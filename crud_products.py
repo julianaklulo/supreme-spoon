@@ -60,6 +60,12 @@ def find_product(id: int) -> int:
     
     return index
 
+def print_product(index: int) -> None:
+        print(f"ID: {products[index].get_id()}")
+        print(f"Name: {products[index].get_name()}")
+        print(f"Description: {products[index].get_description()}")
+        print(f"Price: R${products[index].get_price()}\n")
+
 def list_products():
     if len(products) == 0:
         print("\nNo products yet!\n")
