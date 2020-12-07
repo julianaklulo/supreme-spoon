@@ -11,7 +11,10 @@ class Product:
         self.set_price(price)
 
     def set_id(self) -> None:
-        self.__id = len(products) + 1
+        if len(products) == 0:
+            self.__id = 1
+        else:
+            self.__id = products[-1].get_id() + 1
 
     def get_id(self) -> int:
         return self.__id
