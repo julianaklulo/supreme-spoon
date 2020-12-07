@@ -34,6 +34,19 @@ class Product:
     def get_price(self) -> float:
         return self.__price
 
+products = []
+
+def create_product():
+    print("\nCreate a new product\n")
+    name = input("Product name: ")
+    description = input("Product description: ")
+    price = float(input("Product price: "))
+
+    product = Product(name, description, price)
+    products.append(product)
+    print("\nProduct created successfully!\n")
+
+    menu()
 def menu():
     option = -1
     while option < 0 or option > 4:
@@ -47,3 +60,7 @@ def menu():
 
         if option == 0:
             break
+        elif option == 1:
+            create_product()
+if __name__ == "__main__":
+    menu()
