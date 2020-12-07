@@ -108,24 +108,17 @@ def delete_product():
     print("\nDelete a product\n")
     id = int(input("Product ID: "))
 
-    index = -1
-    for product in products:
-        if product.get_id() == id:
-            index = products.index(product)
-            break
+    index = find_product(id)
 
-    if index != -1:
+    if index >= 0:
         print("\nProduct found!\n")
-        print(f"ID: {products[index].get_id()}")
-        print(f"Name: {products[index].get_name()}")
-        print(f"Description: {products[index].get_description()}")
-        print(f"Price: R${products[index].get_price()}\n")
-
+        print_product(index)
+        
         option = input("Are you sure you want to delete this product? (Y/N) ").upper()
+        
         if option == "Y":
             products.pop(index)
             print("\nProduct deleted successfully!\n")
-
     else:
         print("\nProduct not found!\n")
 
