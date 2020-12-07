@@ -112,7 +112,6 @@ def update_product():
         products[index].set_price(price)
 
         print("\nProduct updated succesfully!\n")
-
     else:
         print("\nProduct not found!\n")
 
@@ -144,8 +143,9 @@ def menu():
         print("\nChoose an option:")
         print("1 - Create product")
         print("2 - List all products")
-        print("3 - Update product")
-        print("4 - Delete product")
+        print("3 - List product by ID")
+        print("4 - Update product")
+        print("5 - Delete product")
         print("0 - Exit")
         option = int(input("\nOption: "))
 
@@ -156,8 +156,10 @@ def menu():
         elif option == 2:
             list_products()
         elif option == 3:
-            update_product()
+            list_product_by_id()
         elif option == 4:
+            update_product()
+        elif option == 5:
             delete_product()
 
 if __name__ == "__main__":
