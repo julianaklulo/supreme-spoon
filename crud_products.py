@@ -33,3 +33,17 @@ class Product:
 
     def get_price(self) -> float:
         return self.__price
+
+def menu():
+    option = -1
+    while option < 0 or option > 4:
+        print("\nChoose an option:")
+        print("1 - Create product")
+        print("2 - List all products")
+        print("3 - Update product")
+        print("4 - Delete product")
+        print("0 - Exit")
+        option = int(input("\nOption: "))
+
+        if option == 0:
+            break
