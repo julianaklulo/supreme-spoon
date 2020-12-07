@@ -49,12 +49,10 @@ def create_product():
     menu()
 
 def list_products():
-    print("\nProducts created:\n")
-    
     if len(products) == 0:
-        print("No products yet!\n")
-        
+        print("\nNo products yet!\n")
     else:
+        print("\nProducts created:\n")
         for product in products:
             print(f"ID: {product.get_id()}")
             print(f"Name: {product.get_name()}")
