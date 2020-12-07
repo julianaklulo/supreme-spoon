@@ -83,17 +83,11 @@ def update_product():
     print("\nUpdate a product\n")
     id = int(input("Product ID: "))
 
-    index = -1
-    for product in products:
-        if product.get_id() == id:
-            index = products.index(product)
-            break
-    if index != -1:
+    index = find_product(id)
+
+    if index >= 0:
         print("\nProduct found!\n")
-        print(f"ID: {products[index].get_id()}")
-        print(f"Name: {products[index].get_name()}")
-        print(f"Description: {products[index].get_description()}")
-        print(f"Price: R${products[index].get_price()}\n")
+        print_product(index)
 
         name = input("New product name: ")
         description = input("New product description: ")
