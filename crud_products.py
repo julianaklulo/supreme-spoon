@@ -61,6 +61,34 @@ def list_products():
 
     menu()
 
+def update_product():
+    print("\nUpdate a product\n")
+    id = int(input("Product ID: "))
+
+    index = -1
+    for product in products:
+        if product.get_id() == id:
+            index = products.index(product)
+            break
+
+    print("\nProduct found!\n")
+    print(f"ID: {products[index].get_id()}")
+    print(f"Name: {products[index].get_name()}")
+    print(f"Description: {products[index].get_description()}")
+    print(f"Price: R${products[index].get_price()}\n")
+
+    name = input("New product name: ")
+    description = input("New product description: ")
+    price = float(input("New product price: "))
+
+    products[index].set_name(name)
+    products[index].set_description(description)
+    products[index].set_price(price)
+
+    print("\nProduct updated succesfully!\n")
+
+    menu()
+
 def menu():
     option = -1
     while option < 0 or option > 4:
@@ -78,6 +106,8 @@ def menu():
             create_product()
         elif option == 2:
             list_products()
+        elif option == 3:
+            update_product()
 
 if __name__ == "__main__":
     menu()
