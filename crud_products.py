@@ -132,10 +132,7 @@ def list_products():
     else:
         print("\nProducts created:\n")
         for product in products:
-            print(f"ID: {product.get_id()}")
-            print(f"Name: {product.get_name()}")
-            print(f"Description: {product.get_description()}")
-            print(f"Price: R${product.get_price()}\n")
+            product.print_product()
 
     menu()
 
@@ -147,7 +144,7 @@ def list_product_by_id():
 
     if index >= 0:
         print("\nProduct found!\n")
-        print_product(index)
+        products[index].print_product()
     else:
         print("\nProduct not found!\n")
     
@@ -161,7 +158,7 @@ def update_product():
 
     if index >= 0:
         print("\nProduct found!\n")
-        print_product(index)
+        products[index].print_product()
 
         name = input("New product name: ")
         description = input("New product description: ")
@@ -185,7 +182,7 @@ def delete_product():
 
     if index >= 0:
         print("\nProduct found!\n")
-        print_product(index)
+        products[index].print_product()
         
         option = input("Are you sure you want to delete this product? (Y/N) ").upper()
         
