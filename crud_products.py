@@ -34,7 +34,10 @@ class Product:
         return self.__name
 
     def set_description(self, description: str) -> None:
-        self.__description = description
+        if len(description) >= 20:
+            self.__description = description
+        else:
+            raise ValueError("Description lenght must be at least 20 characters!") 
 
     def get_description(self) -> str:
         return self.__description
