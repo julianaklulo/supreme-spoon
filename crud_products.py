@@ -103,9 +103,14 @@ def create_product():
     print("\nCreate a new product\n")
     name = input("Product name: ")
     description = input("Product description: ")
-    price = float(input("Product price: "))
+    price = float(input("Product price (R$): "))
+    weight = float(input("Product weight (kg): "))
+    width = float(input("Product width (m): "))
+    height = float(input("Product height (m): "))
+    depth = float(input("Product depth (m): "))
 
-    product = Product(name, description, price)
+    product = Product(name, description, price, weight, width, height, depth)
+
     products.append(product)
     print("\nProduct created successfully!\n")
 
@@ -119,12 +124,6 @@ def find_product(id: int) -> int:
             break
     
     return index
-
-def print_product(index: int) -> None:
-        print(f"ID: {products[index].get_id()}")
-        print(f"Name: {products[index].get_name()}")
-        print(f"Description: {products[index].get_description()}")
-        print(f"Price: R${products[index].get_price()}\n")
 
 def list_products():
     if len(products) == 0:
@@ -162,11 +161,19 @@ def update_product():
 
         name = input("New product name: ")
         description = input("New product description: ")
-        price = float(input("New product price: "))
+        price = float(input("New product price (R$): "))
+        weight = float(input("New product weight (kg): "))
+        width = float(input("New product width (m): "))
+        height = float(input("New product height (m): "))
+        depth = float(input("New product depth (m): "))
 
         products[index].set_name(name)
         products[index].set_description(description)
         products[index].set_price(price)
+        products[index].set_weight(weight)
+        products[index].set_width(width)
+        products[index].set_height(height)
+        products[index].set_depth(depth)
 
         print("\nProduct updated succesfully!\n")
     else:
