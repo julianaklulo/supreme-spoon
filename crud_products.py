@@ -40,7 +40,10 @@ class Product:
         return self.__description
 
     def set_price(self, price: float) -> None:
-        self.__price = price
+        if price > 0:
+            self.__price = price
+        else:
+            raise ValueError("Price must be positive!")
 
     def get_price(self) -> float:
         return self.__price
