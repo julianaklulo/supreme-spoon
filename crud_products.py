@@ -7,8 +7,9 @@ class Product:
     __width: float
     __height: float
     __depth: float
+    __categories: list[int] = []
 
-    def __init__(self, name: str, description: str, price: float, weight: float, width: float, height: float, depth: float) -> None:
+    def __init__(self, name: str, description: str, price: float, weight: float, width: float, height: float, depth: float, categories: list[int]) -> None:
         self.set_id()
         self.set_name(name)
         self.set_description(description)
@@ -17,6 +18,9 @@ class Product:
         self.set_width(width)
         self.set_height(height)
         self.set_depth(depth)
+
+        for category in categories:
+            self.set_category(category)
 
     def set_id(self) -> None:
         if len(products) == 0:
@@ -87,6 +91,17 @@ class Product:
     def get_depth(self) -> float:
         return self.__depth
 
+    def set_category(self, category_id: int) -> None:
+        self.__categories.append(category_id)
+
+    def get_categories(self) -> str:
+        categories_names = ""
+        for category_id in self.__categories:
+            index = find_category(category_id)
+            if index >= 0:
+                categories_names += categories[index].get_name() + " "
+        return categories_names
+
     def print_product(self) -> None:
         print(f"ID: {self.get_id()}")
         print(f"Name: {self.get_name()}")
@@ -95,6 +110,8 @@ class Product:
         print(f"Weight: {self.get_weight()} kg")
         print(f"Width: {self.get_width()} m")
         print(f"Height: {self.get_height()} m")
+        print(f"Depth: {self.get_depth()} m")
+        print(f"Categories: {self.get_categories()}\n")
 
 class Category:
     __id: int
