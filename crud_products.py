@@ -3,6 +3,10 @@ class Product:
     __name: str
     __description: str
     __price: float
+    __weight: float
+    __width: float
+    __height: float
+    __depth: float
 
     def __init__(self, name: str, description: str, price: float) -> None:
         self.set_id()
@@ -36,6 +40,42 @@ class Product:
 
     def get_price(self) -> float:
         return self.__price
+
+    def set_weight(self, weight: float) -> None:
+        if weight > 0:
+            self.__weight = weight
+        else:
+            raise ValueError("Weight must be positive!")
+
+    def get_weight(self) -> float:
+        return self.__weight
+
+    def set_width(self, width: float) -> None:
+        if width> 0:
+            self.__width = width
+        else:
+            raise ValueError("Width must be positive!")
+
+    def get_width(self) -> float:
+        return self.__width
+
+    def set_height(self, height: float) -> None:
+        if height > 0:
+            self.__height = height
+        else:
+            raise ValueError("Height must be positive!")
+
+    def get_height(self) -> float:
+        return self.__height
+
+    def set_depth(self, depth: float) -> None:
+        if depth > 0:
+            self.__depth = depth
+        else:
+            raise ValueError("Depth must be positive!")
+
+    def get_depth(self) -> float:
+        return self.__depth
 
 products = []
 
