@@ -8,11 +8,15 @@ class Product:
     __height: float
     __depth: float
 
-    def __init__(self, name: str, description: str, price: float) -> None:
+    def __init__(self, name: str, description: str, price: float, weight: float, width: float, height: float, depth: float) -> None:
         self.set_id()
         self.set_name(name)
         self.set_description(description)
         self.set_price(price)
+        self.set_weight(weight)
+        self.set_width(width)
+        self.set_height(height)
+        self.set_depth(depth)
 
     def set_id(self) -> None:
         if len(products) == 0:
