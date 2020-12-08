@@ -176,6 +176,15 @@ def find_product(id: int) -> int:
     
     return index
 
+def find_category(id: int) -> int:
+    index = -1
+    for category in categories:
+        if category.get_id() == id:
+            index = categories.index(category)
+            break
+    
+    return index
+
 def list_products():
     if len(products) == 0:
         print("\nNo products yet!\n")
