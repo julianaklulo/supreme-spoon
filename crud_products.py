@@ -149,8 +149,10 @@ def create_product():
     width = float(input("Product width (m): "))
     height = float(input("Product height (m): "))
     depth = float(input("Product depth (m): "))
+    categories_ids = input("Product categories ID: ").split()
+    categories_ids = [int(category_id) for category_id in categories_ids]
 
-    product = Product(name, description, price, weight, width, height, depth)
+    product = Product(name, description, price, weight, width, height, depth, categories_ids)
 
     products.append(product)
     print("\nProduct created successfully!\n")
