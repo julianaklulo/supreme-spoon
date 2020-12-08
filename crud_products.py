@@ -87,6 +87,16 @@ class Product:
     def get_depth(self) -> float:
         return self.__depth
 
+    def print_product(self) -> None:
+        print(f"ID: {self.get_id()}")
+        print(f"Name: {self.get_name()}")
+        print(f"Description: {self.get_description()}")
+        print(f"Price: R${self.get_price()}")
+        print(f"Weight: {self.get_weight()} kg")
+        print(f"Width: {self.get_width()} m")
+        print(f"Height: {self.get_height()} m")
+        print(f"Depth: {self.get_depth()} m\n")
+
 products = []
 
 def create_product():
