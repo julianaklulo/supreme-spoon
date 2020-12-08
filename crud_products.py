@@ -95,7 +95,30 @@ class Product:
         print(f"Weight: {self.get_weight()} kg")
         print(f"Width: {self.get_width()} m")
         print(f"Height: {self.get_height()} m")
-        print(f"Depth: {self.get_depth()} m\n")
+
+class Category:
+    __id: int
+    __name: str
+
+    def __init__(self, name: str) -> None:
+        self.set_id()
+        self.set_name(name)
+
+    def set_id(self) -> None:
+        if len(categories) == 0:
+            self.__id = 1
+        else:
+            self.__id = categories[-1].get_id() + 1
+
+    def get_id(self) -> int:
+        return self.__id
+
+    def set_name(self, name: str) -> None:
+        self.__name = name
+
+    def get_name(self) -> str:
+        return self.__name
+
 
 products = []
 
