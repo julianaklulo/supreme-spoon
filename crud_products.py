@@ -138,6 +138,7 @@ class Category:
 
 
 products = []
+categories = []
 
 def create_product():
     print("\nCreate a new product\n")
@@ -153,6 +154,16 @@ def create_product():
 
     products.append(product)
     print("\nProduct created successfully!\n")
+
+    menu()
+
+def create_category():
+    print("\nCreate a new category\n")
+    name = input("Category name: ")
+
+    category = Category(name)
+    categories.append(category)
+    print("\nCategory created successfully!\n")
 
     menu()
 
@@ -250,6 +261,8 @@ def menu():
         print("3 - List product by ID")
         print("4 - Update product")
         print("5 - Delete product")
+        print("--------------------")
+        print("6 - Create category")
         print("0 - Exit")
         option = int(input("\nOption: "))
 
@@ -265,6 +278,8 @@ def menu():
             update_product()
         elif option == 5:
             delete_product()
+        elif option == 6:
+            create_category()
 
 if __name__ == "__main__":
     menu()
